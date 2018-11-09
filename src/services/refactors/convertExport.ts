@@ -175,7 +175,7 @@ namespace ts.refactor {
             case SyntaxKind.ImportSpecifier:
             case SyntaxKind.ExportSpecifier: {
                 const spec = parent as ImportSpecifier | ExportSpecifier;
-                if (spec.kind === SyntaxKind.ImportSpecifier) {
+                if (spec.kind === SyntaxKind.ImportSpecifier) { //this is silly, just use two separate cases then!!!
                     // `import { foo } from "./a";` --> `import foo from "./a";`
                     // `import { foo as bar } from "./a";` --> `import bar from "./a";`
                     const defaultImport = createIdentifier(spec.name.text);
